@@ -1,0 +1,28 @@
+{
+    "cars": [
+        {
+            "Make": "Toyota",
+            "Model": "Camry",
+            "Year": 20233,
+            "Registration Number": "74A6868",
+            "New Car": true,
+            "Car pick up location": [
+                "Samara",
+                "Moscow",
+                "Sant-petersburg"
+            ]
+        },
+        {
+            "Make": "Toyota",
+            "Model": "Camry",
+            "Year": 20233,
+            "Registration Number": "74A6868",
+            "New Car": true,
+            "Car pick up location": [
+                "Samara",
+                "Moscow",
+                "Sant-petersburg"
+            ]
+        }
+    ]
+}
