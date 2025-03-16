@@ -1,0 +1,13 @@
+<main class="main">
+  <h1>LAB 2</h1>
+  <div class="container">
+    <h2>Enter Your Name</h2>
+    <input type="text" [(ngModel)]="userName" placeholder="Your Name">
+    <button (click)="greetUser()">Greet Me</button>
+
+    <div *ngIf="showGreeting" class="greeting-message">
+      {{ greeting }}
+    </div>
+  </div>
+</main>
+<router-outlet />
