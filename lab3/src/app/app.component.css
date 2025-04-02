@@ -1,0 +1,20 @@
+body {
+    margin: 0px !important;
+    padding: 0px;
+}
+
+a {
+    padding: 10px;
+    margin: 20px;
+    background-color: aqua;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+.header {
+    background-color: antiquewhite;
+    padding: 15px;
+    margin: 0px;
+    text-align: center;
+}
