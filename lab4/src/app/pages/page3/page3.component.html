@@ -1,0 +1,18 @@
+<div class="input_form">
+    <div class="input_name">
+        <label class="label_input_form">Имя</label>
+        <input name="name" [(ngModel)]="name" required />
+    </div>
+    <div class="input_surname">
+        <label class="label_input_form">Фамилия</label>
+        <input name="surname" [(ngModel)]="surname" required />
+    </div>
+    <div class="input_age">
+        <label class="label_input_form">Возраст</label>
+        <input type="number" name="age" [(ngModel)]="age" required />
+    </div>
+    <button class="btn_input_form" type="submit" (click)="addUser()">Добавить</button>
+    <button class="btn_input_form" type="submit" (click)="deleteUser()">Удалить</button>
+    <button class="btn_input_form" type="submit" (click)="showUsers()">Показывать</button>
+
+</div>

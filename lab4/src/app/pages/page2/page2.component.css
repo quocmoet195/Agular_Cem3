@@ -1,0 +1,36 @@
+.input_form {
+    background-color: aquamarine;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+.input_name,
+.input_surname,
+.input_age {
+    padding: 5px;
+    height: 30px;
+    font-size: larger;
+}
+
+input {
+    width: 200px;
+    height: 23px;
+}
+
+.label_input_form {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 90px;
+    margin-right: 5px;
+}
+
+
+.btn_input_form {
+    padding: 5px;
+    margin: 10px;
+    background-color: aqua;
+    border-radius: 10px;
+    font-size: larger;
+}

@@ -1,0 +1,18 @@
+<form class="input_form" [formGroup]="userForm" >
+    <div class="input_name">
+        <label class="label_input_form">Имя</label>
+        <input formControlName="name" />
+    </div>
+    <div class="input_surname">
+        <label class="label_input_form">Фамилия</label>
+        <input formControlName="surname" />
+    </div>
+    <div class="input_age">
+        <label class="label_input_form">Возраст</label>
+        <input type="number" formControlName="age" />
+    </div>
+    <button class="btn_input_form" type="submit" (click)="addUser()">Добавить</button>
+    <button class="btn_input_form" type="submit" (click)="removeUser()">Удалить</button>
+    <button class="btn_input_form" type="submit" (click)="showUsers()">Показывать</button>
+
+</form>
