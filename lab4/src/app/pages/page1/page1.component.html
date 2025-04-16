@@ -1,1 +1,10 @@
 <h1>Page1 works!</h1>
+<div>
+    {{ 'Hello!' | myPipe: 'Quoc' }}
+</div>
+<div>
+    <h3>Students: </h3>
+    <ul>
+        <li *ngFor="let student of students"> {{student.name}} {{student.surname}} {{student.group}}</li>
+    </ul>
+</div>
