@@ -1,0 +1,75 @@
+<h2>Список задач</h2>
+
+<div class="task-list-container">
+  @if (tasks$ | async; as tasks) {
+    @if (tasks.length > 0) {
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Тип</th>
+            <th>Заголовок</th>
+            <th>Статус</th>
+            <th>Приоритет</th>
+            <th>Исполнитель</th>
+            <th>Создатель</th>
+            <th>Создано</th>
+            <th>Изменено</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (task of tasks; track task.id) {
+            <tr>
+              <td>{{ task.id }}</td>
+              <td>{{ task.type }}</td>
+              <td>{{ task.title }}</td>
+              <td><span class="status-badge {{ getStatusClass(task.status) }}">{{ task.status }}</span></td>
+              <td>
+                @if (task.priority) {
+                 <span class="priority-badge {{ getPriorityClass(task.priority) }}">{{ task.priority }}</span>
+                } @else {
+                  <span class="text-muted">--</span>
+                }
+              </td>
+              <td>{{ task.assignee || '--' }}</td>
+              <td>{{ task.reporter }}</td>
+              <td>{{ task.createdAt | date:'dd.MM.yyyy HH:mm' }}</td>
+              <td>{{ task.updatedAt | date:'dd.MM.yyyy HH:mm' }}</td>
+              <td class="description-cell">{{ task.description || '--' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    } @else {
+      <p>Список задач пока пуст. Добавьте новую задачу с помощью формы выше.</p>
+    }
+  } @else {
+     <p>Загрузка списка задач...</p>
+  }
+</div>
+
+<!-- Старый синтаксис с *ngIf / *ngFor -->
+<!--
+<div *ngIf="tasks$ | async as tasks; else loading">
+  <div *ngIf="tasks.length > 0; else emptyList">
+    <table>
+      <thead> ... </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks; trackBy: trackById">
+          <td>{{ task.id }}</td>
+          ...
+          <td>{{ task.createdAt | date:'short' }}</td>
+          ...
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #emptyList>
+    <p>Список задач пока пуст.</p>
+  </ng-template>
+</div>
+<ng-template #loading>
+  <p>Загрузка...</p>
+</ng-template>
+-->

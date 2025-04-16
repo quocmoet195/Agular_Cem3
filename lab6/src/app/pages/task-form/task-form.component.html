@@ -1,0 +1,59 @@
+<h2>Добавить новую задачу</h2>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+
+  <div class="form-group">
+    <label for="type">Тип*:</label>
+    <select id="type" formControlName="type">
+      <option *ngFor="let typeOpt of taskTypes" [value]="typeOpt">{{ typeOpt }}</option>
+    </select>
+    <div *ngIf="type?.invalid && (type?.dirty || type?.touched)" class="error-message">
+      <small *ngIf="type?.errors?.['required']">Тип обязателен.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Заголовок*:</label>
+    <input type="text" id="title" formControlName="title" placeholder="Краткое описание задачи">
+    <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="error-message">
+       <small *ngIf="title?.errors?.['required']">Заголовок обязателен.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="status">Статус*:</label>
+    <select id="status" formControlName="status">
+      <option *ngFor="let statusOpt of taskStatuses" [value]="statusOpt">{{ statusOpt }}</option>
+    </select>
+     <div *ngIf="status?.invalid && (status?.dirty || status?.touched)" class="error-message">
+       <small *ngIf="status?.errors?.['required']">Статус обязателен.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="priority">Приоритет:</label>
+    <select id="priority" formControlName="priority">
+      <option [ngValue]="null">-- Не выбрано --</option> 
+      <option *ngFor="let priorityOpt of taskPriorities" [value]="priorityOpt">{{ priorityOpt }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Описание:</label>
+    <textarea id="description" formControlName="description" rows="3" placeholder="Подробное описание (опционально)"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="assignee">Исполнитель:</label>
+    <input type="text" id="assignee" formControlName="assignee" placeholder="Имя или ID исполнителя (опционально)">
+  </div>
+
+  <div class="form-group">
+    <label for="reporter">Создатель*:</label>
+    <input type="text" id="reporter" formControlName="reporter" placeholder="Ваше имя или ID">
+    <div *ngIf="reporter?.invalid && (reporter?.dirty || reporter?.touched)" class="error-message">
+      <small *ngIf="reporter?.errors?.['required']">Создатель обязателен.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="taskForm.invalid">Добавить задачу</button>
+</form>

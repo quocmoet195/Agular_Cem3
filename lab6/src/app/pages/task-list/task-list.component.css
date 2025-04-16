@@ -1,0 +1,67 @@
+.task-list-container {
+    overflow-x: auto; 
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+  
+  th, td {
+    border: 1px solid #ddd; 
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top; 
+  }
+  
+  thead th {
+    background-color: #f2f2f2; 
+    font-weight: bold;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  tbody tr:hover {
+    background-color: #eef; 
+  }
+  
+  .description-cell {
+    min-width: 150px; 
+    white-space: pre-wrap; 
+    word-break: break-word;
+  }
+  
+  .text-muted {
+   color: #6c757d;
+  }
+  
+  
+  .priority-badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.8em;
+    text-transform: capitalize;
+  }
+  .priority-critical { background-color: #dc3545; }
+  .priority-high { background-color: #ffc107; color: #333;}
+  .priority-medium { background-color: #17a2b8; }
+  .priority-low { background-color: #28a745; }
+  
+  
+  .status-badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.8em;
+    text-transform: capitalize;
+  }
+  .status-new { background-color: #007bff; }
+  .status-in-progress { background-color: #ffc107; color: #333; }
+  .status-review { background-color: #6f42c1; }
+  .status-done { background-color: #28a745; }
+  .status-rejected { background-color: #dc3545; }
